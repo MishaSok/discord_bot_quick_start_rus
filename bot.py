@@ -12,6 +12,13 @@ async def on_ready():  # Event on_ready активируется когда бо
 
 
 @bot.command()
+async def menu(ctx):  # Создаем комманду menu
+    embed = discord.Embed(color=0xff9900, title='Help menu')  # Создание Embed
+    embed.add_field(name='hello', value='bot say you hi!', inline=True)  # Добавляем контент в Embed
+    await ctx.send(embed=embed)  # Отправка нашего меню сообщением
+
+
+@bot.command()
 async def hello(ctx):  # Создаем комманду hello
     author = ctx.message.author  # Создаем переменную author в которую занесем имя и тэг пользователя.
     await ctx.send(f'Hello, {author.mention}!')  # Используем метод .mention, который "тэгает" пользователя
@@ -19,4 +26,4 @@ async def hello(ctx):  # Создаем комманду hello
 
 bot.run(settings['token'])  # Запускаем бота с помощью нашей библиотеки из файла config (опять же если он у вас есть)
 
-# v1.0
+# v1.1
