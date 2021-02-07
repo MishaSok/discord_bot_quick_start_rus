@@ -11,6 +11,7 @@ async def on_ready():  # Event on_ready активируется когда бо
     print('Bot connected successfully!')
 
 
+
 @bot.command()
 async def randoms(ctx, arg):  # передаем arg аргумент (текст или же контент пользователя(не включая команду))
     try:  # Если у нас возникает ошибка при конвертировании нашего str в int, наша функция перейдет в except
